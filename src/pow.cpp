@@ -39,7 +39,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex *pindexLast, const CBlockHead
     bool fTestNet = Params().NetworkIDString() == CBaseChainParams::TESTNET;
 
     // allow instamine first x blocks on testnet for distribution testing
-	if(fTestNet && pindexLast->nHeight < 5000){
+    if (pindexLast->nHeight < 65800) {
 		return bnProofOfWorkLimit.GetCompact();
 	}
 
